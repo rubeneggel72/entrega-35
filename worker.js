@@ -18,8 +18,8 @@ const worker = (app, server) => {
 
     const passport = require('passport');
     const FacebookStrategy = require('passport-facebook')
-    const FACEBOOK_CLIENT_ID = process.env.FACEBOOK_CLIENT_ID || '311695133860663';
-    const FACEBOOK_CLIENT_SECRET = process.env.FACEBOOK_CLIENT_SECRET || 'fc3fe6f65e8f79dd8dcf23cbadcb1feb';
+    const FACEBOOK_CLIENT_ID = process.env.FACEBOOK_CLIENT_ID || '311695*****';
+    const FACEBOOK_CLIENT_SECRET = process.env.FACEBOOK_CLIENT_SECRET || 'fc3fe6f65e8********';
     passport.use(new FacebookStrategy({
         clientID: FACEBOOK_CLIENT_ID,
         clientSecret: FACEBOOK_CLIENT_SECRET,
@@ -73,7 +73,7 @@ const worker = (app, server) => {
             requireTLS: true,
             auth: {
                 user: 'rubenalbertoeggel@gmail.com',
-                pass: 'auto4casa'
+                pass: '*********'
             }
         });
         let info = await transporter.sendMail(data)
@@ -83,8 +83,8 @@ const worker = (app, server) => {
     /*                                 SMS                                    */
     /* ---------------------------------------------------------------------- */
 
-    const accountSid = 'AC7576bee11e67d056b81ef6c5c8aa5582';
-    const authToken = '1904dd0e72eb613e59dffe393a2ea78f';
+    const accountSid = 'AC7576bee11e67d056b81*******';
+    const authToken = '1904dd0e72eb613e59d********';
     const client = require('twilio')(accountSid, authToken);
     const sendSMS = (dataSMS) => {
         client.messages.create(dataSMS)
